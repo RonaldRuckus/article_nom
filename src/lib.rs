@@ -173,8 +173,6 @@ pub async fn gather_google_articles(search_query: &str) -> Result<Vec<NewsArticl
 
     let parsed_text = clean_html(&elements, &config, true).await;
 
-    println!("Parsed text: {:?}", parsed_text);
-
     let mut articles = Vec::new();
     for text in parsed_text {
         if let Some(article) = extract_url_headline(&text).await {
