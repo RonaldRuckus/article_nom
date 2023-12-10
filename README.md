@@ -2,9 +2,12 @@
 
 Exposes two functions:
 
-1. `gather_google_articles(
+1. gather_google_articles
+```
+gather_google_articles(
     search_query: &str
-) -> Result<Vec<NewsArticle>, GatherError>`
+) -> Result<Vec<NewsArticle>, GatherError>
+```
 
 Uses Google News Trending to gather articles. Returns a vector of `NewsArticle` structs.
 ```
@@ -14,10 +17,13 @@ pub struct NewsArticle {
 }
 ```
 
-2. `gather_article(
+2. gather_article
+```
+gather_article(
     url: &str,
     html_cleaner_config: &CleanerConfig,
-) -> Result<String, GatherError>`
+) -> Result<String, GatherError>
+```
 
 Visits the article page and returns the article text. Returns as Markdown.
 A cleaner config is required to clean tags.
