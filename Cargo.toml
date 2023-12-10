@@ -1,7 +1,12 @@
 [package]
-name = "article"
+name = "article_nom"
 version = "0.1.0"
 edition = "2021"
+
+[lib]
+name = "article_nom"
+path = "src/lib.rs"
+
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
