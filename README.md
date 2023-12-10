@@ -1,8 +1,8 @@
-### Article Nommer
+## Article Nommer
 
 Exposes two functions:
 
-## gather_google_articles
+### gather_google_articles
 ```
 gather_google_articles(
     search_query: &str
@@ -17,7 +17,7 @@ pub struct NewsArticle {
 }
 ```
 
-## gather_article
+### gather_article
 ```
 gather_article(
     url: &str,
