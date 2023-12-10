@@ -2,7 +2,7 @@
 
 Exposes two functions:
 
-1. gather_google_articles
+## gather_google_articles
 ```
 gather_google_articles(
     search_query: &str
@@ -17,7 +17,7 @@ pub struct NewsArticle {
 }
 ```
 
-2. gather_article
+## gather_article
 ```
 gather_article(
     url: &str,
