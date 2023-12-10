@@ -36,3 +36,6 @@ pub struct CleanerConfig {
     pub remove_source_tags: bool
 }
 ```
+
+## Requirements
+geckodriver must be running on port 4444.
