@@ -85,8 +85,12 @@ async fn fold_articles(articles: &Vec<String>) -> String {
 /// # Returns
 /// * `String` - The headlines
 pub async fn headlines_to_string(articles: &[NewsArticle]) -> String {
-    articles.into_iter().map(|article| format!("{}\n\n", article.to_string())).collect()
+    articles.iter()
+        .enumerate()
+        .map(|(index, article)| format!("{}. {}\n\n", index + 1, article.to_string()))
+        .collect()
 }
+
 
 /// # Purpose
 /// Cleans the HTML and potentially converts it to Markdown
@@ -103,7 +107,6 @@ async fn clean_html(
     html_cleaner_config: &CleanerConfig,
     to_markdown: bool,
 ) -> Vec<String> {
-    println!("CLEAN HTML ELEMENTS: {}", elements.len());
 
     stream::iter(elements)
         .filter_map(|html| {
