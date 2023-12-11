@@ -1,24 +1,14 @@
 use errors::gather_error::GatherError;
 use futures::{stream, StreamExt};
 use html2md::parse_html;
-
 use models::{
     html_cleaner::{CleanerConfig, HtmlCleaner},
     news_article::NewsArticle,
     news_scraper::NewsScraper,
 };
-
 use regex::Regex;
-
-mod models {
-    pub mod html_cleaner;
-    pub mod news_article;
-    pub mod news_scraper;
-}
-
-mod errors {
-    pub mod gather_error;
-}
+pub mod models;
+pub mod errors;
 
 /// # Purpose
 /// Parses and extracts the URL and headline from a string into a NewsArticle
