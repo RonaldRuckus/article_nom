@@ -76,6 +76,14 @@ async fn fold_articles(articles: &Vec<String>) -> String {
         .await
 }
 
+/// # Purpose
+/// Converts a vector of NewsArticles into a single String of headlines
+/// 
+/// # Parameters
+/// * `articles` - The articles to be converted
+/// 
+/// # Returns
+/// * `String` - The headlines
 pub async fn headlines_to_string(articles: &[NewsArticle]) -> String {
     articles.into_iter().map(|article| format!("{}\n\n", article.to_string())).collect()
 }
