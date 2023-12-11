@@ -76,6 +76,10 @@ async fn fold_articles(articles: &Vec<String>) -> String {
         .await
 }
 
+pub async fn headlines_to_string(articles: &[NewsArticle]) -> String {
+    articles.into_iter().map(|article| format!("{}\n\n", article.to_string())).collect()
+}
+
 /// # Purpose
 /// Cleans the HTML and potentially converts it to Markdown
 ///
